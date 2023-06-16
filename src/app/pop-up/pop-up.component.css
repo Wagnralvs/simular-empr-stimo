@@ -1,0 +1,13 @@
+.container{
+  width: 100%;
+  z-index: 1000;
+
+  display: block;
+
+
+}
+.modal-dialog{
+  margin: 7%;
+  background-color: rgb(206, 206, 206);
+}
+

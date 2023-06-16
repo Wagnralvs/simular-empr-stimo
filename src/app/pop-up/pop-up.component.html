@@ -1,0 +1,23 @@
+<!-- tabindex="-1" role="dialog" *ngIf="!visualizarPopUp"-->
+<div class="modal container" *ngIf="visualizarPopUp" >
+  <div class="  modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Simulação</h5>
+
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid mt-5 m-4">
+
+          <section>✓ Valor das Parcelas R$ {{valorParcela}} .</section>
+          <section >✓ Número de Parcelas : {{numeroParcelas}} .</section>
+          <section>✓ Valor total com juros: R$ {{valorTotalJuros}} .</section>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="confirmarContratacao()">Confirmar</button>
+        <button type="button" class="btn btn-secondary" (click)="close()" data-dismiss="modal">Cancelar</button>
+      </div>
+    </div>
+  </div>
+  </div>

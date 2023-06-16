@@ -1,0 +1,100 @@
+<!----------Página 2 --------------->
+
+<div class="container">
+  <h1 class=" text-center  mt-5 mb-5 ">Simulação de empréstimo</h1>
+
+  <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+
+  <!---------   nome  --------->
+
+  <div class="row  container m-3">
+    <div >
+      <div class="form-floating form-Group" >
+
+        <input type="text"
+          class="form-control"    formControlName="nome"  id="nome" placeholder="your name" value="" >
+
+             <div *ngIf="formulario.controls.nome.touched && formulario.controls.nome?.errors" >
+              <small class="text text-danger" *ngIf="formulario.controls.nome.errors?.required">
+                Nome do solicitante é obrigatório</small>
+              <small class="text text-danger" *ngIf="formulario.controls.nome.errors?.minlength">
+                  Nome inválido</small>
+              <small class="text text-danger" *ngIf="formulario.controls.nome.errors?.pattern">
+                    Apenas letras</small>
+          </div>
+
+         <label for="nome">Nome do solicitante:</label>
+
+      </div>
+    </div>
+  </div>
+
+
+    <!-- ------Valor desejado---------- -->
+    <!-- [dropSpecialCharacters]="true" thousandSeparator="."-->
+    <div class="row  container m-3" >
+      <div class="form-floating form-group"  >
+
+        <input type="tel" prefix="R$"  mask="separator.2" suffix=",00" [dropSpecialCharacters]="true"  thousandSeparator="."   class="form-control"
+         formControlName="valorDesejado"  id="valorDesejado" placeholder="value of the property "  >
+
+         <div *ngIf="formulario.controls.valorDesejado.touched && formulario.controls.valorDesejado?.errors" >
+          <small class="text text-danger" *ngIf="formulario.controls.valorDesejado.errors?.required">
+            Valor do imóvel é obrigatório</small>
+            <small class="text text-danger" *ngIf="formulario.controls.valorDesejado.errors?.pattern">
+              Apenas número</small>
+          </div>
+        <label for="valorDesejado">Valor do desejado :</label>
+      </div>
+    </div>
+
+    <!---------------número de parcelas ------------>
+    <div class="row  container m-3">
+      <div class="form-floating form-group">
+        <input type="tell" mask="999"  class="form-control"
+        formControlName="numeroParcelas"  id="numeroParcelas" placeholder="monthly income"
+       >
+        <div *ngIf="formulario.controls.numeroParcelas.touched && formulario.controls.numeroParcelas?.errors" >
+          <small class="text text-danger" *ngIf="formulario.controls.numeroParcelas.errors?.required">
+            Renda mensal é obrigatoria</small>
+          </div>
+
+        <label for="numeroParcelas">Número de Parcelas:</label>
+
+      </div>
+    </div>
+
+  <!---------buttons---------->
+  <div class="row container-fluid text-center mt-4" >
+     <div class="col-6">
+     <button type="submit"  class="btn btn-success btn-lg "  [disabled]="formulario.invalid" id="btn-proseguir"  >Simular empréstimo</button>
+   </div>
+
+  </div>
+  </form>
+  </div>
+
+  <div *ngIf="propostaResultado">
+  <h4 class="text-center mt-5 ">Proposta da Simulação</h4>
+
+  <div class="container-fluid mt-5 m-4">
+
+  <section>✓ Valor das Parcelas R$ {{valorParcela}} .</section>
+  <section >✓ Número de Parcelas : {{numeroParcelas}} .</section>
+  <section>✓ Valor total com juros: R$ {{valorTotalJuros}} .</section>
+
+
+    <div class="col-6 m-2" >
+    <button   class="btn btn-success btn-lg "  id="btn-proseguir" (click)="abrirPopUp()" >Confirmar</button>
+
+   </div>
+  </div>
+  </div>
+
+  <app-pop-up class="popUp"
+     [visualizarPopUp]="visualizarPopUp"
+     [valorParcela]="valorParcela"
+     [numeroParcelas]="numeroParcelas"
+     [valorTotalJuros]="valorTotalJuros"
+  ></app-pop-up>
+
