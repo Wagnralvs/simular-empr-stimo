@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { tap } from 'rxjs/operators';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { take, tap } from 'rxjs/operators';
 import { Proposta, SimulacaoModel } from '../model/simulacao-model';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SimuladorDadosService } from '../service/simulador-dados.service';
@@ -9,7 +9,7 @@ import { SimuladorDadosService } from '../service/simulador-dados.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit  {
   formulario: FormGroup;
   propostaResultado = false;
   private proposta: Proposta ;
@@ -20,6 +20,7 @@ export class HomeComponent implements OnInit {
   valorTotalJuros= null ;
 
   visualizarPopUp = false;
+  notificarFechamento = false;
 
   constructor(private fb : FormBuilder , private service: SimuladorDadosService) {
     // this.pegarDados();
@@ -49,6 +50,7 @@ pegarDados(){
   let ultimaProposta;
 
   this.service.pegarDados().pipe(
+     take(1),
      tap(result =>{
       proposta = result ;
       ultimaProposta = proposta.pop();
@@ -64,6 +66,7 @@ pegarDados(){
 
 }
 abrirPopUp(){
+ this.visualizarPopUp = this.notificarFechamento;
  this.visualizarPopUp = true;
 }
 }

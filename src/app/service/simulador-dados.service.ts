@@ -39,7 +39,7 @@ enviarDados(dados:SimulacaoModel){
  JSON.stringify(boby);
 
   this.http.post(this.Api, boby).subscribe(
-    (result) => {alert(JSON.stringify(result))},
+    (result) => {console.log(JSON.stringify(result))},
     (error) =>{alert(error)}
   )
 }

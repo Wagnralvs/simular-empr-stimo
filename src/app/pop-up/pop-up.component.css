@@ -1,13 +1,14 @@
-.container{
+.modal{
+  padding: 0;
   width: 100%;
   z-index: 1000;
-
   display: block;
-
-
+  background: rgba(192, 191, 191, 0.7);
+ 
 }
 .modal-dialog{
-  margin: 7%;
-  background-color: rgb(206, 206, 206);
+  padding: 1.5rem;
+  display: flex;
+
 }
 

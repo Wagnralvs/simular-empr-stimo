@@ -5,6 +5,72 @@
       "numeroParcela": "2",
       "totalComJuros": 10600,
       "id": 1
+    },
+    {
+      "valorParcela": 8281.25,
+      "numeroParcela": "32",
+      "totalComJuros": 265000,
+      "id": 2
+    },
+    {
+      "valorParcela": 53000,
+      "numeroParcela": "5",
+      "totalComJuros": 265000,
+      "id": 3
+    },
+    {
+      "valorParcela": 1187.2,
+      "numeroParcela": "5",
+      "totalComJuros": 5936,
+      "id": 4
+    },
+    {
+      "valorParcela": 212,
+      "numeroParcela": "5",
+      "totalComJuros": 1060,
+      "id": 5
+    },
+    {
+      "valorParcela": 53,
+      "numeroParcela": "2",
+      "totalComJuros": 106,
+      "id": 6
+    },
+    {
+      "valorParcela": 106,
+      "numeroParcela": "10",
+      "totalComJuros": 1060,
+      "id": 7
+    },
+    {
+      "valorParcela": 58300,
+      "numeroParcela": "2",
+      "totalComJuros": 116600,
+      "id": 8
+    },
+    {
+      "valorParcela": 80088.83,
+      "numeroParcela": "2",
+      "totalComJuros": 160177.66,
+      "id": 9
+    },
+    {
+      "valorParcela": 17666.666666666668,
+      "numeroParcela": "3",
+      "totalComJuros": 53000,
+      "id": 10
+    },
+    {
+      "valorParcela": 21200,
+      "numeroParcela": "25",
+      "totalComJuros": 530000,
+      "id": 11
+    },
+    {
+      "valorParcela": 21200,
+      "numeroParcela": "25",
+      "totalComJuros": 530000,
+      "id": 12
     }
   ]
 }
